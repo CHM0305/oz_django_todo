@@ -24,7 +24,7 @@
                         </li>
                         <li class="nav-item">
                             <!-- 로그아웃 폼 (POST 방식) Django의 기본 LogoutView는 GET 요청을 허용하지 않으며, POST 요청만 허용. 따라서 로그아웃을 POST 방식으로 요청. -->
-                            <form action="{% url 'logout' %}" method="POST" class="d-inline">
+                            <form action="{% url 'cbv_logout' %}" method="POST" class="d-inline">
                                 {% csrf_token %}
                                 <button type="submit" class="nav-link btn btn-link">로그아웃</button>
                             </form>
@@ -32,10 +32,10 @@
                     {% else %}
                         <!-- 로그인되지 않은 사용자 -->
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'login' %}">로그인</a>
+                            <a class="nav-link" href="{% url 'cbv_login' %}">로그인</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'signup' %}">회원가입</a>
+                            <a class="nav-link" href="{% url 'cbv_signup' %}">회원가입</a>
                         </li>
                     {% endif %}
                 </ul>
