@@ -19,7 +19,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 from todo.views import todo_list, todo_info, todo_create, todo_delete, todo_update
-from users.views import login,signup
+
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -33,8 +33,9 @@ urlpatterns = [
 
     #user
     path("accounts/",include('django.contrib.auth.urls')),
-    path('accounts/login/',login,name="login"),
-    path('accounts/signup/',signup,name="signup"),
+    # path('accounts/login/',login,name="login"),
+    # path('accounts/signup/',signup,name="signup"),
+    path('users/',  include('users.urls')),
 
     # CBV URL include
     path('cbv/', include('todo.urls')),
